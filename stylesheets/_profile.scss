@@ -1,0 +1,260 @@
+#profile {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .profile-picture {
+        width: 100%;
+        height: 400px;
+        // background: red;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        position: relative;
+
+        .gradient-circle {
+            width: 18%;
+            height: 90%;
+            clip-path: circle();
+            border-radius: 25%;
+            background: linear-gradient(0deg, #1b21e7, #64af9b, white 40%);
+            // background: linear-gradient(0deg, #00efb8, #3da8d0, white 40%);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 201;
+            
+            .extra {
+                width: 95%;
+                height: 95%;
+                clip-path: circle();
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+    
+                img {
+                    width: 90%;
+                }
+            }
+        }
+
+        
+
+        .svgs {
+            z-index: 200;
+            position: absolute;
+        }
+        .svg1{
+            
+            width: 100px;
+            bottom: 20%;
+            right: 40%;
+            
+        }
+        .svg2{
+            width: 100%;
+            height: 100%;
+            top: 0%;
+        }
+        .svg3{
+            left: 30%;
+            width: 100px;
+            top: 40%;
+            opacity: .5;
+        }
+        .svg4{
+            right: 30%;
+            width: 50px;
+            top: 50%;
+            opacity: .5;
+        }
+    }
+
+    .profile-main-text{
+        font-family: Poppins;
+        font-size: 3.5vw;
+        text-align: center;
+        line-height: 1;
+
+        .name {
+            color: black;
+        }
+        .job {
+            color: black;
+            
+        }
+        .tenure {
+            font-size: 1.6vw;
+            color: #e8bbfa;
+        }
+    }
+
+    .profile-paragraph {
+        max-width: 60%;
+        height: auto;
+        font-size: 1.3vw;
+        padding: 20px;
+        position: relative;
+        text-align: center;
+        font-family: Poppins;
+        text-transform: capitalize;
+        // background: mediumseagreen;
+        margin: 80px 0px;
+        
+
+        .uppercase-text {
+            text-transform: uppercase;
+        }
+        .traits {
+        background: #f3d0278f;         
+        font-style: italic;
+        }
+        .blue {
+            font-style: italic;
+            background: #00bcd459;
+        }
+
+
+        &::before {
+            content: "\201c";
+            top: -30%;
+            left: -5%;
+            font-size: 7vw;
+            position: absolute;
+        }
+        &::after {
+            content: "\201d";
+            // bottom: -10%;
+            right: -5%;
+            font-size: 7vw;
+            position: absolute;
+        }
+        
+    }
+    .hire-me-wrapper {
+        width: 60%;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-family: Poppins;
+        margin-bottom: 200px;
+
+        h1{
+            margin: 30px 0px;
+            white-space: nowrap;
+        }
+        .go-btn {
+            min-width: 130px;
+            height: 55px;
+            background: #4bd068;
+            border-radius: 6px;
+            font-size: 20px;
+            outline: none;
+            border: none;
+            
+            a{
+                width: 100%;
+                color: white;
+                text-decoration: none;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+        }
+    }
+// Media Qurries
+    @include media(1400px){
+       .profile-picture {
+        height: 300px;
+
+            .gradient-circle {
+                width: 30%;
+            }
+       }
+       .profile-paragraph{
+           font-size: 2vw;
+       }
+       
+    }
+    @include media(900px){
+        // .profile-picture {
+        // //  height: 300px;
+ 
+        //      .gradient-circle {
+        //          width: 30%;
+        //      }
+        // }
+        .profile-paragraph{
+            max-width: 70%;
+            font-size: 2.5vw;
+        }
+    } 
+    @include media(650px){
+        .profile-picture {
+            overflow: hidden;
+            height: 200px;
+
+            // SVGS
+            .svg1, .svg2 , .svg3 {
+                width: 40px;
+            }
+            .svg1 {
+                right: 30%;
+            }
+            .svg2{
+                width: 130%;
+            }
+            .svg3 {
+                left: 80%;
+            }
+            .svg4{
+                width: 20px;
+                left: 10%;
+            }
+
+
+            .gradient-circle {
+                width: 200px;
+    
+                .extra {
+
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+        .profile-paragraph{
+            padding: 5px;
+            max-width: 85%;
+            font-size: 3vw;
+
+            &::before {
+                top: -30%;
+                left: 0%;
+                font-size: 10vw;
+            }
+            &::after {
+                right: 0%;
+                font-size: 10vw;
+            }
+        }
+        .hire-me-wrapper{
+            h1{
+                font-size: 4.5vw;
+            }
+        }
+    }
+
+
+}

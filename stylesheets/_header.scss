@@ -1,0 +1,119 @@
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #bdbdbd42 0px 5px 8px 6px;
+    position: relative;
+
+    .logo-comtainer {
+        width: 50vw;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        // background: green;
+        position: relative;
+
+        img {
+            width: 60%;
+            height: 80%;
+        }
+    }
+
+    nav {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        ul {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+
+            a {
+                display: block;
+                width: auto;
+                height: 100%;
+                text-decoration: none;
+                color: black;
+                font-family: Poppins;
+                padding: 10px;
+                // background: orange;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                font-size: 18px;
+                li {
+                    list-style: none;
+                }
+            }
+        }
+
+        // @include media(650px){
+            
+        //     width: 100%;
+        //     height: auto;
+        //     position: absolute;
+        //     overflow: hidden;
+        //     top: 100%;
+        //     background: purple;
+
+
+
+        //     ul {
+        //         width: 100%;
+        //         justify-content: flex-start;
+        //         flex-direction: column;
+                
+        //         a{
+        //             width: 100%;
+        //             height: 40px;
+        //             background: orange;
+        //             margin: 2px;
+        //         }
+        //     }
+        // }
+    }
+
+
+    .mbl-menu-btn {
+        display: none;
+
+        @include media(650px){
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px;
+
+
+            .menu-btn {
+                width: 40px;
+                transform: scale(1);
+                opacity: 1;
+                will-change: transform,opacity,width;
+                transition: transform 200ms ease  , opacity 200ms ease,width 200ms ease;
+
+                
+            }
+            .close-btn {
+                width: 0px;
+                // display: none;
+                opacity: 0;
+                transform: scale(0), rotateX(90deg);
+                opacity: 1;
+                will-change: width ,transform,opacity;
+                transition: transform 400ms ease  , opacity 400ms ease,width 400ms ease;
+            }
+        }
+    }
+}
